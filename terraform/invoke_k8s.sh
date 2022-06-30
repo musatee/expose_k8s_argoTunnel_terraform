@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-#TUNNEL_NAME="${1}" 
+### this script create k8s objects from local system's shell 
 
 ## create secret for tunnel credential 
 kubectl create ns ecare-prod
