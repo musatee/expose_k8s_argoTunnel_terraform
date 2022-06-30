@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+### this script install cloudflared on local system if not exists & create config.yml file to be stored in ~/.cloudflared directory
+
 TUNNEL_ID="${1}"
 
 if [[ ! $(which cloudflared) ]]
