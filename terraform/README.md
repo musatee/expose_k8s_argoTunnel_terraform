@@ -16,6 +16,7 @@ terraform
 3. Initialize terraform
 		$ terraform init
 		$ terraform apply --auto-approve 
+		
 It'll prompt aws_access_key & aws_secret_key . Provide accordingly what you've already use to create named profile "kaz" 
 Also provide a <tunnel_name> when it prompts 
 
