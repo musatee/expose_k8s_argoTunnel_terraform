@@ -17,6 +17,7 @@
 		$ rm -rf ~/.cloudflared 
 3. Initialize terraform
 
+		$ cd terraform/
 		$ terraform init
 		$ terraform apply --auto-approve 
 		
