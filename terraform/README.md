@@ -12,8 +12,10 @@ terraform
 		$ aws configure set aws_secret_access_key <secret_key> --profile kaz 
          
 2. delete .cloudflared directory from your home direcotory if it already exists 
+
 		$ rm -rf ~/.cloudflared 
 3. Initialize terraform
+
 		$ terraform init
 		$ terraform apply --auto-approve 
 		
