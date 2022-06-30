@@ -1,9 +1,10 @@
 # Expose k8s service through argo tunnel or cloudflare tunnel using terraform
 
 ## It needs to have following packages installed on your local system 
-aws-cli 
-kubectl 
-terraform 
+***
+	aws-cli 
+	kubectl 
+	terraform 
 
 ## Steps to follow along
 1. create a named profile called "kaz" for terraform to interact with aws 
