@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: deployment-ecare-prod
+  namespace: ecare-prod
+spec: 
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 50%
+    type: RollingUpdate
+
+  selector:
+    matchLabels: 
+      app: ecare-prod   
+  template:
+    metadata:
+      name: pods-ecare
+      labels:
+        app: ecare-prod
+    spec:
+    
+      containers:
+        - 
+          name: demo-app
+          image: nginx
+          imagePullPolicy: Always
+          ports:
+            - 
+              containerPort: 80
+          livenessProbe:
+            initialDelaySeconds: 240
+            periodSeconds: 15
+            tcpSocket:
+              port: 80
+            timeoutSeconds: 5
+            failureThreshold: 3  
+
