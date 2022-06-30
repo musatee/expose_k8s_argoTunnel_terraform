@@ -1,8 +1,9 @@
 #!/bin/bash 
 
-### this script create k8s objects from local system's shell 
+# this script create k8s objects from local system's shell 
 
-## create secret for tunnel credential 
+## create secret for tunnel credential
+sleep 60
 kubectl create ns ecare-prod
 kubectl create secret generic tunnel-credentials --from-file=credentials.json=$HOME/.cloudflared/credential.json --namespace ecare-prod 
 

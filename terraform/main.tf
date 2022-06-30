@@ -169,7 +169,7 @@ resource "aws_eks_node_group" "kaz_nodes" {
   ]
 }
 
-### from dependancy Here I've additionally authenticate to aws using same credentials of named profile used in order to run kubernetes manifests
+### from dependancy Here I've to additionally authenticate to aws using same credentials of named profile used in order to run kubernetes manifests
 resource "null_resource" "setup_aws_configure" {
   provisioner "local-exec" {
     command = "aws configure set aws_access_key_id ${var.aws_access_key}; aws configure set aws_secret_access_key ${var.aws_secret_key}; aws configure set default.region ${var.aws_region}"

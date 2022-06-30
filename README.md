@@ -23,4 +23,5 @@
 It'll prompt aws_access_key & aws_secret_key . Provide accordingly what you've already use to create named profile "kaz" 
 Also provide a <tunnel_name> when it prompts 
 
+4. Browse the domain akmusa.tk to see if everything works as expected or not. Here I've used a deployment of nginx container for simplicity.
  
