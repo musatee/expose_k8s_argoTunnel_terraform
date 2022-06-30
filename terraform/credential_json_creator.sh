@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+### this script populates credential.json file to be stored in ~/.cloudflared directory
+
 ACCOUNT_ID="${1}" 
 TUNNEL_SECRET="${2}" 
 TUNNEL_ID="${3}" 
