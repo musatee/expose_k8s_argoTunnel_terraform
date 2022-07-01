@@ -41,10 +41,20 @@ resource "cloudflare_record" "cname" {
   ttl     = 1
 } */
 
+#resource "null_resource" "copy_files" {
+#  depends_on = [cloudflare_argo_tunnel.example]
+#  provisioner "local-exec" {
+#    command = "mkdir ~/.cloudflared && cp credential.json ~/.cloudflared/credential.json && cp cert.pem ~/.cloudflared/cert.pem"
+#  }
+#}
+
+#### creates .cloudflared if not already exists & copy cert.pem, credential.json files to it
 resource "null_resource" "copy_files" {
   depends_on = [cloudflare_argo_tunnel.example]
   provisioner "local-exec" {
-    command = "mkdir ~/.cloudflared && cp credential.json ~/.cloudflared/credential.json && cp cert.pem ~/.cloudflared/cert.pem"
+    #command = "/bin/bash if [[ -d ~/.cloudflared ]];then mv ~/.cloudflared ~/.cloudflared_bak$(date +%Y-%m-%d%T);else mkdir ~/.cloudflared && cp credential.json ~/.cloudflared/credential.json && cp cert.pem ~/.cloudflared/cert.pem;fi"
+    command = "/bin/bash cloudflared_creator.sh"
+
   }
 }
 
