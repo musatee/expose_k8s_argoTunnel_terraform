@@ -12,10 +12,7 @@
 		$ aws configure set aws_access_key_id <access_key> --profile kaz 
 		$ aws configure set aws_secret_access_key <secret_key> --profile kaz 
          
-2. delete .cloudflared directory from your home direcotory if it already exists 
-
-		$ rm -rf ~/.cloudflared 
-3. Initialize terraform
+2. Initialize terraform
 
 		$ cd terraform/
 		$ terraform init
@@ -24,5 +21,5 @@
 It'll prompt aws_access_key & aws_secret_key . Provide accordingly what you've already use to create named profile "kaz" 
 Also provide a <tunnel_name> when it prompts 
 
-4. Browse the domain akmusa.tk to see if everything works as expected or not. Here I've used a deployment of nginx container for simplicity.
+3. Browse the domain akmusa.tk to see if everything works as expected or not. Here I've used a deployment of nginx container for simplicity.
  
